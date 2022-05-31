@@ -1,0 +1,15 @@
+You:
+
+https://api.groupme.com/v3/groups?token=ACCESS_TOKEN
+Basically shows all your groups and then shows details per each group.
+
+
+https://api.groupme.com/v3/groups/GROUP_ID?token=ACCESS_TOKEN
+Shows the specific group details
+https://api.groupme.com/v3/groups/GROUP_ID/messages?token=ACCESS_TOKEN
+Basically shows that groups messages
+
+Bot:
+
+https://api.groupme.com/v3/bots?token=wSzz6dQoutgeg093ZwstIw5Z7qDZhnCMGtpROszb
+Shows all your bots

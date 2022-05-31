@@ -1,0 +1,6 @@
+First get the bot to read the messages and their made fromt the grou.
+Then check if I can get the group me bot to send messages int he group chat.
+
+Do IMages in send messages
+
+allow images that are png not only jpeg to be processed bygroup me image sevice
