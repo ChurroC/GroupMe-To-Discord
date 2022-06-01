@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
         })
 })
 
-app.get('/new-message', (req, res) => {
+app.post('/new-message', (req, res) => {
     console.log('new message')
     const body = JSON.stringify(req.body)
     console.log(`You sent: ${body} to Exprwess`)
