@@ -27,7 +27,7 @@ async function bots(ACCESS_TOKEN = process.env.ACCESS_TOKEN){
     return JSON.stringify(response.data)
 }
 
-//Basically shows all your bots and then shows details per each bot.
+//Turns into Groupme video.
 async function imageService(fileLink, ACCESS_TOKEN = process.env.ACCESS_TOKEN){
     let data
     if (fs.existsSync(fileLink)) {
@@ -47,10 +47,16 @@ async function imageService(fileLink, ACCESS_TOKEN = process.env.ACCESS_TOKEN){
 }
 
 //Bot sends message in group.
-async function sendMessage(message, BOT_ID = process.env.BOT_ID){
+async function sendMessage(message, imageUrl = '', BOT_ID = process.env.BOT_ID){
     const response = await axios.post(`https://api.groupme.com/v3/bots/post`, {
-        "bot_id"  : BOT_ID,
-        "text"    : message
+        "bot_id": BOT_ID,
+        "text": message,
+        "attachments": [
+            {
+                "type": "image",
+                "url": imageUrl
+            }
+        ]
     })
     return JSON.stringify(response.data)
 }
