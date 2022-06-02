@@ -1,12 +1,22 @@
 if (process.env.NODE_ENV !== 'production'){ require('dotenv').config() }
 const express = require('express')
 const bot = require('./bot')
+const axios = require('axios')
 
 const app = express()
 
 PORT = process.env.PORT || 8080
 
-app.get('/', (req, res) => {})
+app.get('/', (req, res) => {
+    axios.get(`https://fremdbands.weebly.com/uploads/5/4/5/2/54522937/vmb_2022_remind_invite.pdf`)
+    .then(response => {
+        res.send(response.data)
+    })
+    .catch(function (error) {
+        res.send(error)
+        console.log(error)
+    });
+})
 
 app.post('/new-message', express.json(), (req, res) => {
     const body = req.body

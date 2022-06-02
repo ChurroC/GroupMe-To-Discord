@@ -1,5 +1,6 @@
-require('dotenv').config()
-const autoExport = require('./autoExport')
+if (process.env.NODE_ENV !== 'production'){ require('dotenv').config() }
+let autoExport
+if (process.env.NODE_ENV !== 'production'){ autoExport = require('./autoExport') }
 const fs = require('fs')
 const axios = require('axios')
 
