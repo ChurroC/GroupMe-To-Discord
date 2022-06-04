@@ -62,6 +62,6 @@ async function sendMessage(message, imageUrl = '', BOT_ID = process.env.BOT_ID){
     return JSON.stringify(response.data)
 }
 
-if (process.env.NODE_ENV !== 'Production'){ autoExport( __filename, 'async function ') }
+if (process.env.NODE_ENV !== 'production'){ autoExport( __filename, 'async function ') }
 
 module.exports = {allGroups, group, groupMessages, bots, imageService, sendMessage, }
